@@ -1,0 +1,92 @@
+\documentclass[a4paper, addpoints]{exam}
+\usepackage{anyfontsize, amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[siunitx,american,RPvoltages]{circuitikz}
+
+% short-hand, e.g. 1<\MO>, 2<\mA>, 3<\kV>, 4<\uF>, 5<\nH>, 6<\C>
+\def\mO{\mohm}
+\def\O{\ohm}
+\def\kO{\kohm}
+\def\MO{\Mohm}
+\def\H{\henry}
+
+
+% title variables
+\def\semester{Spring 2023}
+\def\coursecode{CSE250}
+\def\coursename{Circuits And Electronics}
+\def\sect{05}
+\def\faculty{SHS}
+\def\assessment{Quiz 1}
+\def\setnum{A}
+\def\duration{30 minutes}
+\advance\day by 0
+\input{header.tex}
+
+
+
+
+\marksnotpoints
+% use first brackets for \subpart
+\renewcommand{\subpartlabel}{(\thesubpart)}
+% formatting of Question blocks
+\qformat{
+    \parbox[][24pt][t]{\textwidth}{ % for creating space below
+        \Large\textbf{
+            $\blacksquare$
+            Question \thequestion\ of \numquestions\;
+            \textit{[\thequestiontitle]}\;
+            \textit{[\totalpoints\ marks]}
+            \hfill
+        }
+    }
+}
+% formatting of Bonus Question blocks
+\bonusqformat{
+    \parbox[][24pt][t]{\textwidth}{ % for creating space below
+        \Large\textbf{
+            $\blacksquare$
+            Question \thequestion\ of \numquestions\;
+            \textit{[\thequestiontitle]}\;
+            \textit{[\totalbonuspoints\ marks\;(bonus)]}
+            \hfill
+        }
+    }
+}
+% formatting of subpart, subsubpart etc.
+\pointformat{\small\textbf{\textit{[\thepoints]}}}
+% formatting of bonussubpart, bonussubsubpart etc.
+\bonuspointformat{\small\textbf{\textit{[\thepoints]}}}
+
+
+
+
+\begin{document}
+\begin{center}
+    \fbox{%
+        \fbox{%
+            \parbox{6.9in}{
+                \begin{itemize}[\checkmark,nosep]
+                    \item No washroom breaks. Phones must be turned off. Using/carrying any notes during the exam is not allowed.
+                    \item At the end of the exam, both the \textbf{answer script} and the \textbf{question paper} must be returned to invigilator.
+                    \item All \textbf{\numquestions\ questions} are compulsory. Marks allotted for each question are mentioned beside each question.
+                    \item Bonus questions are indicated as ``\textbf{\textit{(bonus)}}" along with allotted marks.
+                    \item Write your answers inside the indicated boxes. In case you run out of room for an answer, please continue on the back of the page.
+                \end{itemize}
+            }%
+        }%
+    }
+
+\end{center}
+
+% \parbox[][5in][c]{5in}{text}
+
+
+\begin{questions}
+    \foreach \quesno in {1,...,4}{
+            \input{questions/\quesno.tex}
+            \vspace{16pt}
+        }
+    % \input{sample_ques.tex}
+\end{questions}
+\end{document}

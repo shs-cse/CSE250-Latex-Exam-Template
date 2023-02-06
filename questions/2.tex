@@ -1,0 +1,36 @@
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\titledquestion{CO2}
+\begin{center}
+\begin{circuitikz}[scale=2] 
+\draw
+(0,0)   to[I, l=10<\mA>] (0,1)--(1,1)
+        to[V=-25<\V>]  (1,0)--(0,0)
+;
+\end{circuitikz}
+\end{center}
+
+\begin{parts}
+\part[2]\label{part:power:current} 
+What is the power of the current source (with appropriate ± sign and unit)?\footnotemark[2] 
+\begin{solutionbox}{24pt}
+    -250\,\si\mW
+\end{solutionbox}
+
+\part[1]Based on your answer in (\ref{part:power:current}), is the current source supplying/consuming power?
+\begin{solutionbox}{24pt}
+    Supplying
+\end{solutionbox}
+
+\part[2]\label{part:power:voltage}
+What is the power of the voltage source (with appropriate ± sign and unit)?\footnotemark[2] 
+\begin{solutionbox}{24pt}
+    +250\,\si\mW
+\end{solutionbox}
+
+\part[1]Based on your answer in (\ref{part:power:voltage}), is the voltage source supplying/consuming power?
+\begin{solutionbox}{24pt}
+    Consuming
+\end{solutionbox}
+\end{parts}
+
+\footnotetext[2]{Mark distribution: 1 mark for the sign, 0.5 mark for the value and 0.5 mark for the unit}
