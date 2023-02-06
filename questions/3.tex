@@ -5,57 +5,57 @@ Which of the following circuits are illegal connection?
 For each of the circuits below, put a checkmark (\checkmark) on either ``Legal" or ``Illegal". Explain why in each case.
 \bigskip
 \begin{parts}
-\part[\half] The following connection is: 
+    \part[\half] The following connection is:
     \begin{oneparcheckboxes}
         \CorrectChoice Legal
         \choice Illegal
     \end{oneparcheckboxes}
-    
+
     \begin{tabular}{m{2in} m{4in}}
-    \begin{circuitikz}[scale=1.5] 
-        \draw
-        (0,0) to[V, l=3<\V>] ++(1,0)
+        \begin{circuitikz}[scale=1.5]
+            \draw
+            (0,0) to[V, l=3<\V>] ++(1,0)
             to[V, l=5<\V>, invert] ++(1,0)
             to[V, l=2<\V>] ++(1,0)
-        ;
-    \end{circuitikz} & 
-    \begin{solutionbox}{\size}
-        Because voltage sources can be connected in series.
-    \end{solutionbox}
+            ;
+        \end{circuitikz} &
+        \begin{solutionbox}{\size}
+            Because voltage sources can be connected in series.
+        \end{solutionbox}
     \end{tabular}
 
 
-\part[\half] The following connection is: 
+    \part[\half] The following connection is:
     \begin{oneparcheckboxes}
         \choice Legal
         \CorrectChoice Illegal
     \end{oneparcheckboxes}
-    
+
     \begin{tabular}{m{2in} m{4in}}
-    \begin{circuitikz}[scale=1.5] 
-        \draw
-        (0,0) to[I, l=3<\A>] ++(1,0)
+        \begin{circuitikz}[scale=1.5]
+            \draw
+            (0,0) to[I, l=3<\A>] ++(1,0)
             to[I, l=5<\A>, invert] ++(1,0)
             to[I, l=2<\A>] ++(1,0)
-        ;
-    \end{circuitikz} & 
-    \begin{solutionbox}{\size}
-        Because current sources can \textbf{\textit{not}} be connected in series.
-    \end{solutionbox}
+            ;
+        \end{circuitikz} &
+        \begin{solutionbox}{\size}
+            Because current sources can \textbf{\textit{not}} be connected in series.
+        \end{solutionbox}
     \end{tabular}
 
 
 
-\part[\half] The following connection is: 
+    \part[\half] The following connection is:
     \begin{oneparcheckboxes}
         \choice Legal
         \CorrectChoice Illegal
     \end{oneparcheckboxes}
-    
+
     \begin{tabular}{m{2in} m{4in}}
-    \begin{circuitikz}[scale=1.5] 
-        \draw
-        (0,0)
+        \begin{circuitikz}[scale=1.5]
+            \draw
+            (0,0)
             -- ++(0.5,0)
             to[V, l=5<\V>, *-*] ++(2,0)
             -- ++(0,1)
@@ -64,25 +64,25 @@ For each of the circuits below, put a checkmark (\checkmark) on either ``Legal" 
             to[V, l=2<\V>] ++(2,0)
             -- ++(0,1)
             -- ++(0.5,0)
-        ;
-    \end{circuitikz} & 
-    \begin{solutionbox}{\size}
-        Because voltage sources can \textbf{\textit{not}} be connected in parallel.
-    \end{solutionbox}
+            ;
+        \end{circuitikz} &
+        \begin{solutionbox}{\size}
+            Because voltage sources can \textbf{\textit{not}} be connected in parallel.
+        \end{solutionbox}
     \end{tabular}
 
 
 
-\part[\half] The following connection is: 
+    \part[\half] The following connection is:
     \begin{oneparcheckboxes}
         \CorrectChoice Legal
         \choice Illegal
     \end{oneparcheckboxes}
-    
+
     \begin{tabular}{m{2in} m{4in}}
-    \begin{circuitikz}[scale=1.5] 
-        \draw
-        (0,0)
+        \begin{circuitikz}[scale=1.5]
+            \draw
+            (0,0)
             -- ++(0.5,0)
             to[I, l=5<\A>, *-*] ++(2,0)
             -- ++(0,1)
@@ -91,11 +91,11 @@ For each of the circuits below, put a checkmark (\checkmark) on either ``Legal" 
             to[I, l=2<\A>] ++(2,0)
             -- ++(0,1)
             -- ++(0.5,0)
-        ;
-    \end{circuitikz} & 
-    \begin{solutionbox}{\size}
-        Because current sources can be connected in parallel.
-    \end{solutionbox}
+            ;
+        \end{circuitikz} &
+        \begin{solutionbox}{\size}
+            Because current sources can be connected in parallel.
+        \end{solutionbox}
     \end{tabular}
 
 
