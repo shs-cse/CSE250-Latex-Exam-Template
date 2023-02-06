@@ -1,7 +1,7 @@
 *
+!bracu_logo.png
 !latexmkrc
 !questions/*
 !header.tex
 !main.tex
-!main.pdf
-!bracu_logo.png
+!*.pdf
