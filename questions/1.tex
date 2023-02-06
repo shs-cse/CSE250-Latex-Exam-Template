@@ -1,26 +1,26 @@
 \titledquestion{CO1}[2]
 \begin{center}
-        \begin{circuitikz}[scale=2]
-                \draw
-                (0,0)   to[V=100<\V>] (0,1)
-                to[R=10<\kO>] (1,1)
-                to[R=20<\kO>] (2,1)
-                to[V=4<\V>, invert, -*] (2,0)--(0,0)
-                (1,0)
-                to[short, *-*](1,1) -- (1,2)
-                to[R=40<\kO>] (2.5,2)
-                to[V=120<\V>] (4,2)
-                to[short, -*] (4,1) --(3,1)
-                to[I, l=2<\A>, invert, -*] (3,0)--(2.5,0) node[ground]{}--(2,0)
-                (3,0)--(4,0)
-                to[short, *-] (4,1)--(5,1)
-                to[R=80<\kO>] (5,0)--(4,0)
-                ;
-        \end{circuitikz}
+    \begin{circuitikz}[scale=2]
+        \draw
+        (0,0)   to[V=100<\V>] (0,1)
+        to[R=10<\kO>] (1,1)
+        to[R=20<\kO>] (2,1)
+        to[V=4<\V>, invert, -*] (2,0)--(0,0)
+        (1,0)
+        to[short, *-*](1,1) -- (1,2)
+        to[R=40<\kO>] (2.5,2)
+        to[V=120<\V>] (4,2)
+        to[short, -*] (4,1) --(3,1)
+        to[I, l=2<\A>, invert, -*] (3,0)--(2.5,0) node[ground]{}--(2,0)
+        (3,0)--(4,0)
+        to[short, *-] (4,1)--(5,1)
+        to[R=80<\kO>] (5,0)--(4,0)
+        ;
+    \end{circuitikz}
 \end{center}
 
 How many nodes are there in this circuit (including the ground node)?
 
 \begin{solutionbox}{24pt}
-        4 nodes
+    4 nodes
 \end{solutionbox}
