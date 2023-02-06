@@ -1,5 +1,5 @@
 # Latex Template for BracU CSE250 Exams
-This template uses the [$\rm\LaTeX$ documentclass called `exam`](https://math.mit.edu/~psh/exam/examdoc.pdf) 
+This template uses the $\rm\LaTeX$ [documentclass called `exam`](https://math.mit.edu/~psh/exam/examdoc.pdf) 
 to automatically add up marks for all the questions and bonus questions. 
 Summarized instructions for creating a question:
 
