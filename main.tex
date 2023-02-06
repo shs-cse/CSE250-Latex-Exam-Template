@@ -85,8 +85,8 @@
 
 
 \begin{questions}
-    \foreach \quesno in {1,...,4}{
-            \input{questions/\quesno.tex}
+    \foreach \quesno in {1,...,99}{
+            \InputIfFileExists{questions/\quesno.tex}{}{}
             \vspace{16pt}
         }
 \end{questions}
