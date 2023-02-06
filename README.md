@@ -4,8 +4,8 @@ to automatically add up marks for all the questions and bonus questions.
 Summarized instructions for creating a question:
 
 ## Adding questions
-Inside [`questions/`](/questions/) folder, create a new `.tex` file numbered from `1` to `n`. 
-Then in [`main.tex`](/main.tex), run the `\foreach` loop upto `n`.
+Inside [`questions/`](/questions/) folder, create a new `.tex` file numbered from `1` (or `01`) to `99`. 
+Any skipped file number will automatically be filled.
 
 Each `.tex` file should contain a `\titledquestion` or `\bonustitledquestion`. Each such questions may contain parts and subparts:
 
