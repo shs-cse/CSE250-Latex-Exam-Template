@@ -1,24 +1,202 @@
 \newpage
+\def\kk{~\si\kO\ }
 \titledquestion{CO3}[10]
 What is the value of equivalent resistance $R_{eq}$? \textit{[Must show step by step procedure of finding $R_{eq}$]}
 
-\begin{circuitikz}[scale=3] 
-\draw
-(1,-1) -- (0,-1)
+\begin{circuitikz}[scale=3]
+    \draw
+    (1,-1) -- (0,-1)
     to[open, o-o, l=$R_{eq}$] (0,0)
-(0,0)   to[R=30<\kO>] (1,0)
-(1,0)   to[R, l_=40<\kO>] (1,-1)
-(1,0)   to[R=20<\kO>] (2,0)
-(1,-1)   to[R=40<\kO>] (2,0)
-(1,-1)   to[R=20<\kO>] (2,-1)
-(2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
-(2,-1)   to[R=40<\kO>] (3,-1)
-(2,0)   to[R=50<\kO>] (3,0)
-(2,0)   to[R=30<\kO>] (3,-1)
-(3,0)   to[R=10<\kO>] (3,-1)
-;
+    (0,0)   to[R=30<\kO>] (1,0)
+    (1,0)   to[R, l_=40<\kO>] (1,-1)
+    (1,0)   to[R=20<\kO>] (2,0)
+    (1,-1)   to[R=40<\kO>] (2,0)
+    (1,-1)   to[R=20<\kO>] (2,-1)
+    (2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
+    (2,-1)   to[R=40<\kO>] (3,-1)
+    (2,0)   to[R=50<\kO>] (3,0)
+    (2,0)   to[R=30<\kO>] (3,-1)
+    (3,0)   to[R=10<\kO>] (3,-1)
+    ;
 \end{circuitikz}
 
 \begin{solutionbox}{24pt}
-50\,\si\kO
+    50\,\si\kO
 \end{solutionbox}
+
+\begin{solution}
+    \begin{itemize}
+        \item Given circuit:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  (1,-1)   to[R=20<\kO>] (2,-1)
+                  (2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
+                  (2,-1)   to[R=40<\kO>] (3,-1)
+                  (2,0)   to[R=30<\kO>] (3,-1)
+                  ;
+                  \draw[red]
+                  (2,0)   to[R=50<\kO>] (3,0)
+                  (3,0)   to[R=10<\kO>] (3,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 50\kk and 10\kk in series $\Rightarrow (50+10)\kk = 60\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  (1,-1)   to[R=20<\kO>] (2,-1)
+                  (2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
+                  (2,-1)   to[R=40<\kO>] (3,-1)
+                  ;
+                  \draw[red]
+                  (2,0)   to[R=30<\kO>] (3,-1)
+                  (2,0)   -- (3,0)
+                  (3,0) to[R=60<\kO>, thick] (3,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 60\kk and 30\kk in parallel $\Rightarrow \left(\frac{60 \times 30}{60 + 30}\right) \kk = 20\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  (1,-1)   to[R=20<\kO>] (2,-1)
+                  (2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
+                  ;
+                  \draw[red]
+                  (2,-1)   to[R=40<\kO>] (3,-1)
+                  (2,0)   -- (3,0)
+                  (3,0) to[R=20<\kO>, thick] (3,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 40\kk and 20\kk in series $\Rightarrow (40+20)\kk = 60\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  (1,-1)   to[R=20<\kO>] (2,-1)
+                  ;
+                  \draw[red]
+                  (2,-1)  -- (3,-1)
+                  (2,0)   -- (3,0)
+                  (2,-1)   to[R, l=\rotatebox{90}{30\,\si\kO}] (2,0)
+                  (3,0) to[R=60<\kO>, thick] (3,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 60\kk and 30\kk in parallel $\Rightarrow \left(\frac{60 \times 30}{60 + 30}\right) \kk = 20\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  ;
+                  \draw[red]
+                  (1,-1)   to[R=20<\kO>] (2,-1)
+                  (2,-1)   to[R, l=\rotatebox{90}{20\,\si\kO}, thick] (2,0)
+                  ;
+              \end{circuitikz}
+
+
+        \item 20\kk and 20\kk in series $\Rightarrow (20+20)\kk = 40\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  ;
+                  \draw[red]
+                  (2,-1)   -- (2,0)
+                  (1,-1)   to[R=40<\kO>] (2,0)
+                  (1,-1)   to[R=40<\kO>, thick] (2,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 40\kk and 40\kk in parallel $\Rightarrow \left(\frac{40 \times 40}{40 + 40}\right) \kk = 20\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  ;
+                  \draw[red]
+                  (2,-1)   -- (2,0)
+                  (1,0)   to[R=20<\kO>] (2,0)
+                  (1,-1)   to[R=20<\kO>, thick] (2,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 20\kk and 20\kk in series $\Rightarrow (20+20)\kk = 40\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (1,-1) -- (0,-1)
+                  to[open, o-o, l=$R_{eq}$] (0,0)
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  ;
+                  \draw[red]
+                  (1,-1)   -- (2,-1)
+                  (1,0)   -- (2,0)
+                  (1,0)   to[R, l_=40<\kO>] (1,-1)
+                  (2,-1)   to[R=40<\kO>, thick] (2,0)
+                  ;
+              \end{circuitikz}
+
+
+        \item 40\kk and 40\kk in parallel $\Rightarrow \left(\frac{40 \times 40}{40 + 40}\right) \kk = 20\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (0,-1) to[open, o-o, l=$R_{eq}$] (0,0)
+                  ;
+                  \draw[red]
+                  (0,0)   to[R=30<\kO>] (1,0)
+                  (1,-1) -- (0,-1)
+                  (1,0)   to[R, l_=20<\kO>, thick] (1,-1)
+                  ;
+              \end{circuitikz}
+
+
+        \item 20\kk and 30\kk in series $\Rightarrow (20+30)\kk = 50\kk$:\\
+              \begin{circuitikz}[scale=3]
+                  \draw
+                  (0,-1) to[open, o-o, l=$R_{eq}$] (0,0)
+                  ;
+                  \draw[red]
+                  (1,0)   to[R, l_=50<\kO>, thick] (1,-1)
+                  (0,0)   -- (1,0)
+                  (1,-1) -- (0,-1)
+                  ;
+              \end{circuitikz}
+    \end{itemize}
+\end{solution}
