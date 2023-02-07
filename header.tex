@@ -6,52 +6,52 @@
 % first page styling
 \firstpageheadrule
 \firstpageheader{
-                    \textsf{\textbf{\large Brac University}}\\
-                    Semester: \semester\\ 
-                    Course Code: \coursecode\\ 
-                    \coursename\\
-                    \ifdefined\sect
-                        Section: \sect\\
-                    \fi
-                    \ifdefined\faculty
-                        Faculty: \faculty
-                    \fi
-                }
-                {
-                    \begin{tabular}{|m{2in}|m{2.5in} m{0in}|}
-                        \hline
-                        ID: & Name: & \rule{0pt}{24pt}\\
-                        \hline
-                    \end{tabular}\\ 
-                    \vspace{1em}
-                    \ifdefined\setnum
-                        \begin{tabular}{|c|}
-                            \hline
-                            \Large Set\\
-                            \hline
-                            \fontsize{60}{0}\selectfont \setnum\\
-                            \hline
-                        \end{tabular}\\
-                        \vspace{-3pt}
-                    \else
-                        \vspace{56pt}
-                    \fi
-                }
-                {
-                    \includegraphics[height=0.75in]{bracu_logo.png}\\
-                    Assessment: \textit{\assessment}\\
-                    Duration: \duration \\
-                    Date: \today\\
-                    Full Marks (incl. bonus \totalbonuspoints): \numpoints
-                }
+    \textsf{\textbf{\large Brac University}}\\
+    Semester: \semester\\
+    Course Code: \coursecode\\
+    \coursename\\
+    \ifdefined\sect
+        Section: \sect\\
+    \fi
+    \ifdefined\faculty
+        Faculty: \faculty
+    \fi
+}
+{
+    \begin{tabular}{|m{2in}|m{2.5in} m{0in}|}
+        \hline
+        ID: & Name: & \rule{0pt}{24pt} \\
+        \hline
+    \end{tabular}\\
+    \vspace{1em}
+    \ifdefined\setnum
+        \begin{tabular}{|c|}
+            \hline
+            \Large Set                          \\
+            \hline
+            \fontsize{60}{0}\selectfont \setnum \\
+            \hline
+        \end{tabular}\\
+        \vspace{-3pt}
+    \else
+        \vspace{56pt}
+    \fi
+}
+{
+    \includegraphics[height=0.75in]{bracu_logo.png}\\
+    Assessment: \textit{\assessment}\\
+    Duration: \duration \\
+    Date: \today\\
+    Full Marks (incl. bonus \numbonuspoints): \numpoints
+}
 % other pages styling
 \runningheadrule
 \runningheader{
-                    \coursecode\ \semester\
-              }
-              {
-                    \Large \textbf{\assessment\ifdefined\setnum{~$\blacktriangleright $ Set \setnum}\fi}
-              }
-              {
-                    {Page \thepage\ of \numpages}
-              }
+    \coursecode\ \semester\
+}
+{
+    \Large \textbf{\assessment\ifdefined\setnum{~$\blacktriangleright $ Set \setnum}\fi}
+}
+{
+    {Page \thepage\ of \numpages}
+}
