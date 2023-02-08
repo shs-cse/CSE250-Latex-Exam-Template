@@ -1,4 +1,4 @@
-\documentclass[a4paper, addpoints]{exam}
+\documentclass[a4paper, addpoints, answers]{exam}
 \usepackage{anyfontsize, amssymb}
 \usepackage[shortlabels]{enumitem}
 \usepackage[siunitx, american, RPvoltages]{circuitikz}
@@ -24,7 +24,7 @@
 \input{header.tex}
 
 
-
+\def\zero{0}
 
 \marksnotpoints
 % use first brackets for \subpart
@@ -34,10 +34,16 @@
     \parbox[][24pt][t]{0.95\textwidth}{ % for creating space below
         \Large\textbf{
             $\blacksquare$
-            Question \thequestion\ of \numquestions\;
-            \textit{
-                [\thequestiontitle]\;
-                [\totalpoints\ marks]
+            Question \thequestion\ of \numquestions\;\relax
+            \textit{\relax
+                \if\thequestiontitle\thequestion\relax
+                \else[\thequestiontitle]\;\relax
+                \fi\relax
+                [\totalpoints\ marks\relax
+                    \if\totalbonuspoints 0\relax
+                    \else + \totalbonuspoints\ marks\;(bonus)\relax
+                    \fi\relax
+                ]
             }
         }
     }
@@ -91,5 +97,11 @@
             }
             \vspace{16pt}
         }
+
+    \question My name is Shawon
+    \begin{parts}
+        \part[1] Why?
+        \bonuspart[1\half] Why not?
+    \end{parts}
 \end{questions}
 \end{document}
