@@ -25,24 +25,28 @@
 
 
 
-
+% marks instead of points
 \marksnotpoints
+\def\marks#1{%
+    \ifthenelse{\equal{#1}{1} \or \equal{#1}{\half}}
+    {#1 mark}{#1 marks}%
+}%
 % use first brackets for \subpart
 \renewcommand{\subpartlabel}{(\thesubpart)}
 % formatting of Question blocks
 \qformat{
     \parbox[][24pt][t]{0.95\textwidth}{ % for creating space below
         \Large\textbf{
-            \filbreak$\blacksquare$
-            Question \thequestion\ of \numquestions\;\relax
-            \textit{\relax
-                \if\thequestiontitle\thequestion\relax
-                \else[\thequestiontitle]\;\relax
-                \fi\relax
-                [\totalpoints\ marks\relax
-                    \if\totalbonuspoints 0\relax
-                    \else \,+\,\totalbonuspoints\ marks\;(bonus)\relax
-                    \fi\relax
+            $\blacksquare$
+            Question \thequestion\ of \numquestions\;%
+            \textit{%
+                \if\thequestiontitle\thequestion%
+                \else[\thequestiontitle]\;%
+                \fi%
+                [\marks\totalpoints%
+                    \if\totalbonuspoints 0%
+                    \else \,+\,\marks\totalbonuspoints\;(bonus)%
+                    \fi%
                 ]
             }
         }
@@ -54,11 +58,12 @@
     \parbox[][24pt][t]{0.95\textwidth}{ % for creating space below
         \Large\textbf{
             $\blacksquare$
-            Question \thequestion\ of \numquestions\;
-            \textit{
-                [\thequestiontitle]\;
-                [\totalbonuspoints\ marks\;
-                (bonus)]
+            Question \thequestion\ of \numquestions\;%
+            \textit{%
+                \if\thequestiontitle\thequestion%
+                \else[\thequestiontitle]\;%
+                \fi%
+                [\marks\totalbonuspoints\;(bonus)]
             }
         }
     }
@@ -74,9 +79,9 @@
 
 \begin{document}
 \begin{center}
-    \fbox{\relax
-        \fbox{\relax
-            \parbox{0.95\textwidth}{\relax
+    \fbox{%
+        \fbox{%
+            \parbox{0.95\textwidth}{%
                 \begin{itemize}[\checkmark,nosep]
                     \item No washroom breaks. Phones must be turned off. Using/carrying any notes during the exam is not allowed.
                     \item At the end of the exam, both the \textbf{answer script} and the \textbf{question paper} must be returned to invigilator.
@@ -84,10 +89,11 @@
                     \item Bonus questions are indicated as ``\textbf{\textit{(bonus)}}" along with allotted marks.
                     \item Write your answers inside the indicated boxes. In case you run out of room for an answer, please continue on the back of the page.
                 \end{itemize}
-            }\relax
-        }\relax
+            }%
+        }%
     }
 \end{center}
+
 
 
 \begin{questions}
@@ -95,6 +101,7 @@
             \InputIfFileExists{questions/\quesno.tex}{}{
                 \InputIfFileExists{questions/0\quesno.tex}{}{}
             }
+            \filbreak
         }
 \end{questions}
 \end{document}
