@@ -1,10 +1,12 @@
+% \usepackage{showframe}
 \pagestyle{head}
 % dimensions
 \extrawidth{72pt}
-\extraheadheight[64pt]{0pt}
-\extrafootheight{-64pt}
+\addtolength{\topmargin}{-16pt} % pull up all the headers
+\extrafootheight{-80pt} % push down the footer out of page 
+\headrule
 % first page styling
-\firstpageheadrule
+\extraheadheight[80pt]{0pt} % extra space for first page header 
 \firstpageheader{
     \textsf{\textbf{\large Brac University}}\\
     Semester: \semester\\
@@ -45,7 +47,6 @@
     Full Marks (incl. bonus \numbonuspoints): \numpoints
 }
 % other pages styling
-\runningheadrule
 \runningheader{
     \coursecode\ \semester\
 }
