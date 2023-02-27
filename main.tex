@@ -2,10 +2,11 @@
 \usepackage{anyfontsize, amssymb}
 \usepackage[shortlabels]{enumitem}
 \usepackage[siunitx, american, RPvoltages]{circuitikz}
+\sisetup{parse-numbers=false}
 
 % short-hand for resistor units, e.g. 
 % in circuitikz: 1<\MO>, 2<\mA>, 3<\kV>, 4<\uF>, 5<\nH>, 6<\C> 
-% in math-mode: \SI{1}{\MO}
+% in math-mode: \qty{1}{\MO}
 \DeclareSIUnit{\mO}{\milli\ohm}
 \DeclareSIUnit{\O}{\ohm}
 \DeclareSIUnit{\kO}{\kilo\ohm}
