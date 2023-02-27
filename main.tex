@@ -3,12 +3,13 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[siunitx, american, RPvoltages]{circuitikz}
 
-% short-hand, e.g. 1<\MO>, 2<\mA>, 3<\kV>, 4<\uF>, 5<\nH>, 6<\C>
-\def\mO{\mohm}
-\def\O{\ohm}
-\def\kO{\kohm}
-\def\MO{\Mohm}
-\def\H{\henry}
+% short-hand for resistor units, e.g. 
+% in circuitikz: 1<\MO>, 2<\mA>, 3<\kV>, 4<\uF>, 5<\nH>, 6<\C> 
+% in math-mode: \SI{1}{\MO}
+\DeclareSIUnit{\mO}{\milli\ohm}
+\DeclareSIUnit{\O}{\ohm}
+\DeclareSIUnit{\kO}{\kilo\ohm}
+\DeclareSIUnit{\MO}{\mega\ohm}
 
 
 % title variables
